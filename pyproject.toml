@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wchat-core-min"
+version = "0.1.0"
+description = "Read-only WeChat 4.x local database decryption, chat reading, and contact/group parsing"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "cryptography>=41.0.0",
+  "zstandard>=0.23.0",
+]
+
+[project.scripts]
+wchat-core = "wchat_core.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["wchat_core"]
