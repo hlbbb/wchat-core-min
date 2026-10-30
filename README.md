@@ -158,6 +158,17 @@ cache = ensure_cache(data_dir, account)
 print(cache.cache_dir)
 ```
 
+## Agent skill
+
+`skills/wchat-core/SKILL.md` 是面向 AI agent 的调用说明（Codex/Claude 等技能格式）。
+把它复制到你的技能目录即可让 agent 自动发现并正确调用本 CLI：
+
+```powershell
+Copy-Item -Recurse skills\wchat-core "$env:USERPROFILE\.codex\skills\wchat-core"
+```
+
+技能文档包含触发条件、命令参考、典型流程、密钥与隐私规则，不包含任何聊天数据。
+
 ## 边界
 
 当前版本只做只读解析：
